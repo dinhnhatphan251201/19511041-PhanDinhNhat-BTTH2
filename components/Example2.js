@@ -5,6 +5,7 @@ import {
     StyleSheet,
     Text,
     TextInput,
+    TouchableOpacity,
     View,
 } from "react-native";
 
@@ -17,11 +18,24 @@ const Example2 = () => {
             </View>
             <View>
                 <View style={styles.form}>
-                    <TextInput></TextInput>
-                    <TextInput></TextInput>
-                </View>
-                <View>
-                    <Button title="Login" />
+                    <TextInput
+                        // value={inputPassword}
+                        autoFocus={true}
+                        style={styles.input}
+                        placeholder="User Name"
+                        placeholderTextColor="#929292"
+                    />
+                    <TextInput
+                        // value={inputPassword}
+                        autoFocus={true}
+                        style={styles.input}
+                        placeholder="Password"
+                        placeholderTextColor="#929292"
+                        secureTextEntry={true}
+                    />
+                    <TouchableOpacity style={styles.buttonLogin}>
+                        <Text style={styles.buttonLoginText}>Đăng Nhập</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </SafeAreaView>
@@ -47,5 +61,29 @@ const styles = StyleSheet.create({
         ...Text,
         fontSize: 30,
     },
-    form: {},
+    form: {
+        alignItems: "center",
+        marginTop: 70,
+        position: "relative",
+        width: 300,
+    },
+    input: {
+        backgroundColor: "#fff",
+        height: 50,
+        borderRadius: 20,
+        width: 300,
+        textAlignVertical: "center",
+        paddingHorizontal: 50,
+        fontSize: 20,
+        textAlign: "center",
+    },
+    buttonLogin: {
+        marginTop: 30,
+        backgroundColor: "#99001A",
+        width: 300,
+        height: 50,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 20,
+    },
 });
